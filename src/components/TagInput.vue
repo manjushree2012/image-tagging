@@ -6,6 +6,7 @@
         </div>
 
         <input 
+            @input="handleInput"
             type="text"
             placeholder="Enter a tag"
             @keydown="addTag"
@@ -21,10 +22,24 @@ export default
     data()
     {
         return {
-            tags: ['hello', 'world']
+            tags: []
+        }
+    },
+    watch: {
+        tags: {
+            deep: true,
+            handler() {
+                alert(this.tags)
+                // this.$emit('input', this.tags)
+            }
+          
         }
     },
     methods: {
+        handleInput(e) {
+            // alert('Inside handle input')
+            this.$emit('input', this.tags)
+        },
         addTag(event) {
             if(event.code == 'Comma' || event.code == 'Enter') {
                 event.preventDefault()
