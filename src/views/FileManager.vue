@@ -220,12 +220,12 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr v-for="file in files">
 								<td>
 									<div class="d-flex align-items-center">
 										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
 										</div>
-										<div class="font-weight-bold text-danger">Competitor Analysis Template</div>
+										<div class="font-weight-bold text-danger">{{ file }}</div>
 									</div>
 								</td>
 								<td>Only you</td>
