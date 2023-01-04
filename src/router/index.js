@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Page1View from '../views/Page1View.vue'
+import FileManagerView from '../views/FileManager.vue'
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     path: '/page1',
     name: 'page1',
     component: Page1View
+  },
+  {
+    path: '/filemanager',
+    name: 'FileManager',
+    component: FileManagerView
+
   }
 ]
 
