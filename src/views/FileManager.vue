@@ -353,7 +353,7 @@
 </template>
 
 <script>
-// import "@/assets/css/lineicons.css"
+import axios from 'axios';
 
 export default {
   name: 'FileManagerView',
@@ -362,8 +362,13 @@ export default {
   },
   data() {
     return {
-
+		files: [],
     }
+  },
+  created() {
+	axios
+        .get('http://localhost:8001/list')
+        .then(response => (this.files = response.data))
   },
   methods: {
 
