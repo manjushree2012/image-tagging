@@ -6,7 +6,7 @@
 			<div class="card-body">
 				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary">+ Add File</a>
 				</div>
-				<h5 class="my-3">My Drive</h5>
+				<!-- <h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
 					<div class="list-group list-group-flush"> <a href="javascript:;" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-devices me-2"></i><span>My Devices</span></a>
@@ -20,7 +20,7 @@
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-music me-2"></i><span>Audio</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-beer me-2"></i><span>Zip Files</span></a>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="card">
@@ -92,7 +92,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-3">
+
+				<!-- <div class="row mt-3">
 					<div class="col-12 col-lg-4">
 						<div class="card shadow-none border radius-15">
 							<div class="card-body">
@@ -147,9 +148,10 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
+
 				<!--end row-->
-				<h5>Folders</h5>
+				<!-- <h5>Folders</h5>
 				<div class="row mt-3">
 					<div class="col-12 col-lg-4">
 						<div class="card shadow-none border radius-15">
@@ -199,8 +201,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!--end row-->
+
 				<div class="d-flex align-items-center">
 					<div>
 						<h5 class="mb-0">Recent Files</h5>
