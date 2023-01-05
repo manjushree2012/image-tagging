@@ -29,7 +29,6 @@ export default
         tags: {
             deep: true,
             handler() {
-                alert(this.tags)
                 // this.$emit('input', this.tags)
             }
           
@@ -37,8 +36,7 @@ export default
     },
     methods: {
         handleInput(e) {
-            // alert('Inside handle input')
-            this.$emit('input', this.tags)
+            this.$emit('input', ['hello', 'world'])
         },
         addTag(event) {
             if(event.code == 'Comma' || event.code == 'Enter') {
