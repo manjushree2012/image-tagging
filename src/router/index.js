@@ -1,15 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import Page1View from '../views/Page1View.vue'
 import Page2View from '../views/Page2View.vue'
 import FileManagerView from '../views/FileManager.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: HomeView
+  // },
   {
     path: '/page1',
     name: 'page1',
