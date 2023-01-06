@@ -1,6 +1,7 @@
 <template>
+  <div class="body">
     <form method="POST" @submit="checkForm">
-        <section class="form">
+        <div class="form">
 
             <div class="title">KU Image Tagging Project</div>
             <div class="subtitle">Data Collection Interface</div>
@@ -46,8 +47,12 @@
                     <button class="button submit">Submit</button>
                 </div>
             </div>
-        </section>
+          </div>
     </form>
+    
+
+  </div>
+
   </template>
 
 <script>
@@ -82,8 +87,8 @@ export default {
 </script>
 
 <style scoped>
-body {
-  align-items: center;
+.body {
+  /* align-items: center; */
   background-color: #000;
   display: flex;
   justify-content: center;
@@ -94,7 +99,7 @@ body {
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  height: 650px;
   padding: 20px;
   width: 320px;
 }
