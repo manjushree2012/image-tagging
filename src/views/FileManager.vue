@@ -4,8 +4,24 @@
     <div class="col-12 col-lg-3">
 		<div class="card">
 			<div class="card-body">
+				<div v-if="uploadingFile">
+					Uploading File now ...
+				
+				</div>
+				<div v-else>
+				<input 
+					type="file" 
+					multiple 
+					:name="uploadFieldName" 
+					:disabled="isSaving" 
+					@change="onFilesSelected"
+					ref="file"
+            		accept="image/*" 
+					class="input-file">
+
 				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary">+ Add File</a>
 				</div>
+			</div>
 				<!-- <h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
 					<div class="list-group list-group-flush"> <a href="javascript:;" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
@@ -365,7 +381,10 @@ export default {
   },
   data() {
     return {
+		uploadingFile: false,
 		files: [],
+		uploadedFiles : [],
+		uploadError : null,
     }
   },
   created() {
@@ -374,6 +393,17 @@ export default {
         .then(response => (this.files = response.data))
   },
   methods: {
+	onFilesSelected(event) {
+		const data = {
+			raw: this.$refs.file.files[0],
+			key: 'oyo_bookings.pdf'
+		}
+
+		console.log(data);
+
+		axios.post('http://localhost:8001/put', data).then(response => (this.files = response.data))
+		
+	}
 
     }
 }
@@ -474,6 +504,14 @@ background-color: #f7f7ff;
 .rounded-circle {
     border-radius: 50%!important;
 }
+
+.input-file {
+    opacity: 0; /* invisible but it's there! */
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    cursor: pointer;
+  }
 </style>
 
   
