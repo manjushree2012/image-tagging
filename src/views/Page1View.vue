@@ -1,6 +1,7 @@
 <template>
   <div class="body">
-    <form method="POST" @submit="checkForm">
+    <Loader v-if="loading" />
+    <form v-else method="POST" @submit="checkForm">
         <div class="form">
 
             <div class="title">KU Image Tagging Project</div>
@@ -58,14 +59,16 @@
 <script>
 import axios from 'axios';
 import TagInput from '@/components/TagInput.vue'
+import Loader from '@/components/Loader.vue'
 
 export default {
   name: 'Page1View',
   components: {
-    TagInput
+    TagInput, Loader
   },
   data() {
     return {
+      loading: false,
         form: {
             tag: '',
             keywords: [],
@@ -85,9 +88,13 @@ export default {
             target_key: "stair_dataset1.zip",
         }
 
+        this.loading = true
+
         axios
         .post('http://localhost:8000/autotag/img/fetch', data)
-        .then(response => (this.files = response.data))
+        .then(response => (
+          this.loading = false
+        ))
     }
 }
 }
