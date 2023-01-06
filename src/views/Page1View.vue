@@ -78,8 +78,15 @@ export default {
     checkForm: function(e) {
         e.preventDefault()
 
+        const data = {
+            tag: 'stair',
+            keywords: ["wooden stairs", "outdoor stairs", "indoor stairs"],
+            counters: ["door", "kettle", "chair", "television"],
+            target_key: "stair_dataset1.zip",
+        }
+
         axios
-        .post('http://localhost:8001/autotag/img/fetch', this.form)
+        .post('http://localhost:8000/autotag/img/fetch', data)
         .then(response => (this.files = response.data))
     }
 }
