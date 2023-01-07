@@ -20,6 +20,12 @@
               <button type="button" class="btn btn-primary removeFile" @click="removeFile">Remove File</button>
             </div>
         </div>
+
+        <div
+          class="imagePreviewWrapper"
+          :style="{ 'background-image': `url(${previewImage})` }"
+          @click="selectImage">
+        </div>
   
         <div class="uploadedFile-info">
             <div>Filename: {{ file.name }}</div>
@@ -35,7 +41,8 @@ export default {
     data() {
       return {
         file : '',
-        dragging : false
+        dragging : false,
+        previewImage: null
       }
   },
 
@@ -64,6 +71,10 @@ export default {
       }
       this.file = file;
       this.dragging = false;
+
+      console.log(this.file)
+
+      this.previewImage = URL.createObjectURL(this.file)
       this.$emit('newFile', file)
     },
     removeFile() {
@@ -152,6 +163,16 @@ export default {
 
 .removeFile {
   width: 200px;
+}
+
+.imagePreviewWrapper {
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    background-size: cover;
+    background-position: center center;
 }
 
 </style>
