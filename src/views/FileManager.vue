@@ -394,14 +394,13 @@ export default {
   },
   methods: {
 	onFilesSelected(event) {
+		var files = event.target.files || event.dataTransfer.files;
 		const data = {
-			raw: this.$refs.file.files[0],
-			key: 'oyo_bookings.pdf'
+			raw: files[0],
+			key: Date.now() + '.' + files[0]['name'].split('.').pop()
 		}
-
-		console.log(data);
-
-		axios.post('http://localhost:8001/put', data).then(response => (this.files = response.data))
+		const headers = { 'Content-Type': 'multipart/form-data' }
+		axios.post('http://localhost:8001/put', data, {headers}).then(response => (this.files = response.data))
 		
 	}
 
