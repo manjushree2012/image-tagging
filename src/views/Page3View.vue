@@ -19,16 +19,17 @@
     },
     methods: {
       onFileChange(file) {
-        console.log('Inside here')
-        console.log(file)
-  
         this.fetchApi(file)
       },
+
       fetchApi(file)
       {
-        axios
-          .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-          .then(response => (this.info = response.data.bpi))
+        const data = {
+          img: file
+        }
+        const headers = { 'Content-Type': 'multipart/form-data' }
+        axios.post('http://localhost:8000/tag', data, {headers})
+             .then(response => (this.info = response.data.bpi))
       }
     }
   }
