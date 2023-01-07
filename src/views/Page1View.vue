@@ -33,15 +33,27 @@
                 </div>
             </div> -->
 
-            <div class="field">
+            <!-- <div class="field">
                 <label class="label">Enter keywords here</label>
                 <TagInput v-model="form.keywords"/>
+            </div> -->
+
+            <div class="input-container ic2">
+                <input v-model="form.keywords" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="keywords" class="placeholder">Keywords</label>
             </div>
 
-            <div class="field">
+            <div class="input-container ic2">
+                <input v-model="form.counters" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="keywords" class="placeholder">Counter keywords</label>
+            </div>
+
+            <!-- <div class="field">
                 <label class="label">Enter counter keywords here</label>
                 <TagInput v-model="form.counters"/>
-            </div>
+            </div> -->
 
             <div class="field is-grouped">
                 <div class="control">
@@ -83,17 +95,15 @@ export default {
     checkForm: function(e) {
         e.preventDefault()
 
+
         const data = {
-            tag: 'stair',
-            keywords: ["wooden stairs", "outdoor stairs", "indoor stairs"],
-            counters: ["door", "kettle", "chair", "television"],
-            target_key: "stair_dataset1.zip",
+            tag: this.form.tag,
+            keywords: this.form.keywords.split(",").map(element => { return element.trim() }),
+            counters: this.form.counters.split(",").map(element => { return element.trim() }),
+            target_key: this.form.target_key
         }
-
-        this.loading = true
-
-        axios
-        .post('http://localhost:8000/autotag/img/fetch', data)
+       this.loading = true
+        axios.post('http://localhost:8000/autotag/img/fetch', data)
         .then(response => (
           this.loading = false
         ))
