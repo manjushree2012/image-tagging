@@ -1,7 +1,6 @@
 <template>
     <header>
       <img alt="KU logo" class="logo" src="@/assets/ku_logo.png" width="125" height="125" />
-      <img alt="ICT INOV Logo" src="@/assets/ict_inov_logo.png" width="300" />
     </header>
   
     <main>
