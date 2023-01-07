@@ -102,7 +102,7 @@
 				<div class="fm-search">
 					<div class="mb-0">
 						<div class="input-group input-group-lg">	<span class="input-group-text bg-transparent"><i class="fa fa-search"></i></span>
-							<input type="text" class="form-control" placeholder="Search the files">
+							<input type="text" @input="searchFiles" class="form-control" placeholder="Enter regex to search files">
 						</div>
 					</div>
 				</div>
@@ -396,9 +396,14 @@ export default {
 	this.fetchFiles()
   },
   methods: {
-	fetchFiles() {
-		axios.get('http://localhost:8001/list')
+	fetchFiles(pattern=null) {
+		pattern = pattern ?? '*'
+		axios.get(`http://localhost:8001/list?pattern=${pattern}`)
         .then(response => (this.files = response.data))
+	},
+	searchFiles(event) 
+	{
+		this.fetchFiles(event.target.value)
 	},
 	onFilesSelected(event) {
 		var files = event.target.files || event.dataTransfer.files;
