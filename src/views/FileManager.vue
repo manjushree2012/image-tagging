@@ -395,11 +395,13 @@ export default {
     }
   },
   created() {
-	axios
-        .get('http://localhost:8001/list')
-        .then(response => (this.files = response.data))
+	this.fetchFiles()
   },
   methods: {
+	fetchFiles() {
+		axios.get('http://localhost:8001/list')
+        .then(response => (this.files = response.data))
+	},
 	onFilesSelected(event) {
 		var files = event.target.files || event.dataTransfer.files;
 		const data = {
@@ -408,7 +410,7 @@ export default {
 		}
 		const headers = { 'Content-Type': 'multipart/form-data' }
 		axios.post('http://localhost:8001/put', data, {headers}).then(response => (
-			console.log('sdsd')
+			this.fetchFiles()
 		))
 		
 	},
