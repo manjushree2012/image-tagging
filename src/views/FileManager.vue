@@ -419,7 +419,7 @@ export default {
 			"key" : file
 		}
 		axios.post('http://localhost:8001/delete', data).then(response => (
-			console.log('sdsd')
+			this.fetchFiles()
 		))
 	}
 
