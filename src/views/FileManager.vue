@@ -407,7 +407,9 @@ export default {
 			key: Date.now() + '.' + files[0]['name'].split('.').pop()
 		}
 		const headers = { 'Content-Type': 'multipart/form-data' }
-		axios.post('http://localhost:8001/put', data, {headers}).then(response => (this.files = response.data))
+		axios.post('http://localhost:8001/put', data, {headers}).then(response => (
+			console.log('sdsd')
+		))
 		
 	},
 	deleteFile(file) {
