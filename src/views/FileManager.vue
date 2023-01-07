@@ -252,7 +252,9 @@
 								<td><i class="fa fa-ellipsis-h font-24"></i>
 								</td>
 							</tr>
-							<tr>
+
+
+							<!-- <tr>
 								<td>
 									<div class="d-flex align-items-center">
 										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
@@ -355,7 +357,7 @@
 								<td>Sep 8, 2019</td>
 								<td><i class="fa fa-ellipsis-h font-24"></i>
 								</td>
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
