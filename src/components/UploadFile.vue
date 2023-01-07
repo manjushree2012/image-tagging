@@ -62,11 +62,8 @@ export default {
         this.dragging = false;
         return;
       }
-      
       this.file = file;
-      // console.log(this.file);
       this.dragging = false;
-
       this.$emit('newFile', file)
     },
     removeFile() {
@@ -84,7 +81,7 @@ export default {
 
 <style>
 .dropZone {
-  width: 80%;
+  width: 30%;
   height: 200px;
   position: relative;
   border: 2px dashed #eee;
@@ -107,7 +104,7 @@ export default {
   text-align: center;
 }
 
-..dropZone-title {
+.dropZone-title {
   color: #787878;
 }
 
