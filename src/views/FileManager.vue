@@ -249,7 +249,12 @@
 								</td>
 								<td>Only you</td>
 								<td>Sep 3, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
+								<!-- <td @click="deleteFile(file)"><i class="fa fa-ellipsis-h font-24"></i> -->
+								<td>
+									<button @click="deleteFile(file)" class="list-group-item py-1">
+										<i class="bx bx-trash-alt me-2">
+										</i>
+									</button>
 								</td>
 							</tr>
 
@@ -404,6 +409,14 @@ export default {
 		const headers = { 'Content-Type': 'multipart/form-data' }
 		axios.post('http://localhost:8001/put', data, {headers}).then(response => (this.files = response.data))
 		
+	},
+	deleteFile(file) {
+		const data = {
+			"key" : file
+		}
+		axios.post('http://localhost:8001/delete', data).then(response => (
+			console.log('sdsd')
+		))
 	}
 
     }
