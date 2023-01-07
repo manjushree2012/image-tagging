@@ -1,10 +1,7 @@
-<template>
-    <header>
-      <img alt="KU logo" class="logo" src="@/assets/ku_logo.png" width="125" height="125" />
-    </header>
-  
+  <template>  
     <main>
       <UploadFile @newFile="onFileChange($event)"/>
+      {{ tags }}
     </main>
   </template>
   
@@ -13,9 +10,14 @@
   import axios from 'axios'
   
   export default {
-    name: 'App',
+    name: 'Page3View',
     components: {
       UploadFile
+    },
+    data() {
+      return {
+        tags: []
+      }
     },
     methods: {
       onFileChange(file) {
@@ -29,13 +31,11 @@
         }
         const headers = { 'Content-Type': 'multipart/form-data' }
         axios.post('http://localhost:8000/tag', data, {headers})
-             .then(response => (this.info = response.data.bpi))
+             .then(response => (this.tags = response.data.tags))
       }
     }
   }
-  </script>
-  
-  
+  </script>  
   
   <style scoped>
   header {
