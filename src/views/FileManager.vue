@@ -11,12 +11,10 @@
 				<div v-else>
 				<input 
 					type="file" 
-					multiple 
 					:name="uploadFieldName" 
 					:disabled="isSaving" 
 					@change="onFilesSelected"
 					ref="file"
-            		accept="image/*" 
 					class="input-file">
 
 				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary">+ Add File</a>
