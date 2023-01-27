@@ -21,7 +21,7 @@
             </div> -->
 
             <div class="input-container ic2">
-                <input v-model="form.key" class="input" type="text" placeholder=" " />
+                <input v-model="key" class="input" type="text" placeholder=" " readonly/>
                 <div class="cut"></div>
                 <label for="lastname" class="placeholder">Object Key</label>
             </div>
@@ -87,8 +87,13 @@ export default {
             tag: '',
             keywords: [],
             counters: [],
-            key: '',
+            // key: '',
         }
+    }
+  },
+  computed: {
+    key() {
+        return this.form.tag ? this.form.tag + '_dataset.zip' : ''
     }
   },
   methods: {
@@ -100,7 +105,7 @@ export default {
             tag: this.form.tag,
             keywords: this.form.keywords.split(",").map(element => { return element.trim() }),
             counters: this.form.counters.split(",").map(element => { return element.trim() }),
-            key: this.form.key
+            key: this.key
         }
        this.loading = true
          axios.post('http://localhost/autotag/img/fetch', data)
