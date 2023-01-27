@@ -3,6 +3,8 @@ import Page1View from '../views/Page1View.vue'
 import Page2View from '../views/Page2View.vue'
 import Page3View from '../views/Page3View.vue'
 import FileManagerView from '../views/FileManager.vue'
+import TagsList from '../views/TagList.vue'
+
 
 const routes = [
   // {
@@ -29,6 +31,11 @@ const routes = [
     path: '/page3',
     name: 'page3',
     component: Page3View
+  },
+  {
+    path: '/tags',
+    name: 'tags',
+    component: TagsList
   }
 ]
 

@@ -3,7 +3,8 @@
     <router-link to="/page1">Data Collection Interface</router-link> |
     <router-link to="/filemanager">File Manager</router-link> |
     <router-link to="/page2">ML Training Interface</router-link> |
-    <router-link to="/page3">Image Tagging  Interface</router-link>
+    <router-link to="/page3">Image Tagging  Interface</router-link> |
+    <router-link to="/tags">Tags Listing Interface</router-link>
   </nav>
   <router-view/>
 </template>
