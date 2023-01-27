@@ -16,7 +16,7 @@
             <div class="input-container ic2">
                 <input v-model="key" class="input" type="text" placeholder=" " readonly/>
                 <div class="cut"></div>
-                <label for="lastname" class="placeholder">Object Key</label>
+                <label for="lastname" class="placeholder">Key</label>
             </div>
 
             <div class="input-container ic2">
