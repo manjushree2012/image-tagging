@@ -14,12 +14,6 @@
             </div>
 
             <div class="input-container ic2">
-                <input v-model="key" class="input" type="text" placeholder=" " readonly/>
-                <div class="cut"></div>
-                <label for="lastname" class="placeholder">Key</label>
-            </div>
-
-            <div class="input-container ic2">
                 <input v-model="form.keywords" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="keywords" class="placeholder">Keywords</label>
@@ -30,6 +24,12 @@
                 <div class="cut"></div>
                 <label for="keywords" class="placeholder">Counter keywords</label>
             </div>
+
+            <div class="input-container ic2">
+                <input v-model="key" class="input" type="text" placeholder=" " readonly/>
+                <div class="cut"></div>
+                <label for="lastname" class="placeholder">Key</label>
+            </div>           
 
             <div class="field is-grouped">
                 <div class="control">
