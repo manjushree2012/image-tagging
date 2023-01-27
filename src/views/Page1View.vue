@@ -21,7 +21,7 @@
             </div> -->
 
             <div class="input-container ic2">
-                <input v-model="form.target_key" class="input" type="text" placeholder=" " />
+                <input v-model="form.key" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="lastname" class="placeholder">Object Key</label>
             </div>
@@ -87,7 +87,7 @@ export default {
             tag: '',
             keywords: [],
             counters: [],
-            target_key: '',
+            key: '',
         }
     }
   },
@@ -100,13 +100,13 @@ export default {
             tag: this.form.tag,
             keywords: this.form.keywords.split(",").map(element => { return element.trim() }),
             counters: this.form.counters.split(",").map(element => { return element.trim() }),
-            target_key: this.form.target_key
+            key: this.form.key
         }
        this.loading = true
-        axios.post('http://localhost:8000/autotag/img/fetch', data)
-        .then(response => (
-          this.loading = false
-        ))
+         axios.post('http://localhost/autotag/img/fetch', data)
+         .then(response => (
+           this.loading = false
+         ))
     }
 }
 }
