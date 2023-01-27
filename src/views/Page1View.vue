@@ -13,30 +13,11 @@
                 <label for="firstname" class="placeholder">Tag</label>
             </div>
 
-            <!-- <div class="field">
-                <label class="label">Enter tag here</label>
-                <div class="control">
-                    <input v-model="form.tag" class="input" type="text" placeholder = "Tag here ...">
-                </div>
-            </div> -->
-
             <div class="input-container ic2">
                 <input v-model="key" class="input" type="text" placeholder=" " readonly/>
                 <div class="cut"></div>
                 <label for="lastname" class="placeholder">Object Key</label>
             </div>
-
-            <!-- <div class="field">
-                <label class="label">Enter object key here</label>
-                <div class="control">
-                    <input v-model="form.target_key" class="input" type="text" placeholder = "Object key here ...">
-                </div>
-            </div> -->
-
-            <!-- <div class="field">
-                <label class="label">Enter keywords here</label>
-                <TagInput v-model="form.keywords"/>
-            </div> -->
 
             <div class="input-container ic2">
                 <input v-model="form.keywords" class="input" type="text" placeholder=" " />
@@ -50,11 +31,6 @@
                 <label for="keywords" class="placeholder">Counter keywords</label>
             </div>
 
-            <!-- <div class="field">
-                <label class="label">Enter counter keywords here</label>
-                <TagInput v-model="form.counters"/>
-            </div> -->
-
             <div class="field is-grouped">
                 <div class="control">
                     <button class="button submit">Submit</button>
@@ -62,10 +38,7 @@
             </div>
           </div>
     </form>
-    
-
   </div>
-
   </template>
 
 <script>
@@ -87,7 +60,6 @@ export default {
             tag: '',
             keywords: [],
             counters: [],
-            // key: '',
         }
     }
   },
@@ -99,7 +71,6 @@ export default {
   methods: {
     checkForm: function(e) {
         e.preventDefault()
-
 
         const data = {
             tag: this.form.tag,
