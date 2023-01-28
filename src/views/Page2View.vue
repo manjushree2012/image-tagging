@@ -22,7 +22,13 @@
                     <input v-model="key" id="key" class="input" type="text" placeholder=" " readonly/>
                     <div class="cut"></div>
                     <label for="key" class="placeholder">Key here</label>
-                </div>               
+                </div> 
+                
+                <div class="input-container ic2">
+                    <input v-model="form.group" id="group" class="input" type="text" placeholder=" "/>
+                    <div class="cut"></div>
+                    <label for="group" class="placeholder">Group</label>
+                </div>   
     
                 <div class="field is-grouped">
                 <div class="control">
@@ -47,6 +53,7 @@ export default {
     return {
         form: {
             tag: '',
+            group: ''
             // dataset_key: '',
             // key: '',
         }
@@ -74,7 +81,7 @@ export default {
 
         const registerData = {
             template : "keras/MultiClassSingleTagKerasStandardModelTemplateA.py",
-            group : "clothes",
+            group : this.form.group,
             model_key : this.key
         }
 
