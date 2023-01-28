@@ -70,16 +70,18 @@ export default {
             tag : this.form.tag,
             dataset_key : this.dataset_key,
             key : this.key
-    }
+        }
+
+        const registerData = {
+            template : "keras/MultiClassSingleTagKerasStandardModelTemplateA.py",
+            group : "clothes",
+            model_key : this.key
+        }
 
         axios
         .post('http://localhost/autotag/ml/train/binary', data)
         .then(
-            axios.post('http://localhost/autotag/model/register', {
-                'template' : "keras/MultiClassSingleTagKerasStandardModelTemplateA.py",
-                "group" : "clothes",
-                "model_key" : "jacket_model.zip"
-            })
+            axios.post('http://localhost/autotag/model/register', registerData)
         )
     }
 }
