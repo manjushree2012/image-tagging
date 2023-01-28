@@ -181,7 +181,7 @@ export default {
   methods: {
 	fetchFiles(pattern=null) {
 		pattern = pattern ?? '*'
-		axios.get(`http://localhost:8001/list?pattern=${pattern}`)
+		axios.get(`http://localhost/fs/list`)
         .then(response => (this.files = response.data))
 	},
 	searchFiles(event) 
