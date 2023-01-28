@@ -58,7 +58,13 @@ export default {
 
         axios
         .post('http://localhost/autotag/ml/train/binary', this.form)
-        .then(response => (this.files = response.data))
+        .then(
+            axios.post('http://localhost/autotag/model/register', {
+                'template' : "keras/MultiClassSingleTagKerasStandardModelTemplateA.py",
+                "group" : "clothes",
+                "model_key" : "jacket_model.zip"
+            })
+        )
     }
 }
 }
