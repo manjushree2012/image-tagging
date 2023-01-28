@@ -30,7 +30,7 @@
           img: file
         }
         const headers = { 'Content-Type': 'multipart/form-data' }
-        axios.post('http://localhost:8000/tag', data, {headers})
+        axios.post('http://localhost/tag', data, {headers})
              .then(response => (this.tags = response.data.tags))
       }
     }
