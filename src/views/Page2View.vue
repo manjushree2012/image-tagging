@@ -7,43 +7,22 @@
                 <div class="subtitle">ML Training Interface</div>
 
                 <div class="input-container ic1">
-                    <input v-model="form.object_key" id="object_key" class="input" type="text" placeholder=" " />
+                    <input v-model="form.dataset_key" id="dataset_key" class="input" type="text" placeholder=" " />
                     <div class="cut"></div>
-                    <label for="object_key" class="placeholder">Object key here</label>
+                    <label for="dataset_key" class="placeholder">Dataset key here</label>
                 </div>
-
-                <!-- <div class="field">
-                    <label class="label">Enter object key here</label>
-                    <div class="control">
-                        <input v-model="form.object_key" class="input" type="text" placeholder = "Object key here ...">
-                    </div>
-                </div> -->
 
                 <div class="input-container ic2">
-                    <input v-model="form.source_key" id="source_key" class="input" type="text" placeholder=" " />
+                    <input v-model="form.key" id="key" class="input" type="text" placeholder=" " />
                     <div class="cut"></div>
-                    <label for="source_key" class="placeholder">Source key here</label>
+                    <label for="key" class="placeholder">Key here</label>
                 </div>
-    
-                <!-- <div class="field">
-                    <label class="label">Enter source key here</label>
-                    <div class="control">
-                        <input v-model="form.source_key" class="input" type="text" placeholder = "Source key here ...">
-                    </div>
-                </div> -->
 
                 <div class="input-container ic2">
                     <input v-model="form.tag" id="tag" class="input" type="text" placeholder=" " />
                     <div class="cut"></div>
                     <label for="tag" class="placeholder">Tag here</label>
                 </div>
-    
-                <!-- <div class="field">
-                    <label class="label">Enter tag here</label>
-                    <div class="control">
-                        <input v-model="form.tag" class="input" type="text" placeholder = "Tag here ...">
-                    </div>
-                </div> -->
     
                 <div class="field is-grouped">
                 <div class="control">
@@ -67,8 +46,8 @@ export default {
   data() {
     return {
         form: {
-            object_key: '',
-            source_key: '',
+            dataset_key: '',
+            key: '',
             tag: ''
         }
     }
@@ -78,7 +57,7 @@ export default {
         e.preventDefault()
 
         axios
-        .post('http://localhost:8001/autotag/ml/train/binary', this.form)
+        .post('http://localhost/autotag/ml/train/binary', this.form)
         .then(response => (this.files = response.data))
     }
 }
