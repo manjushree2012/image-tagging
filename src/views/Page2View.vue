@@ -86,9 +86,9 @@ export default {
         }
 
         axios
-        .post('http://autotag.nsdai.org/autotag/ml/train/binary', data)
+        .post('/autotag/ml/train/binary', data)
         .then(
-            axios.post('http://autotag.nsdai.org/autotag/model/register', registerData)
+            axios.post('/autotag/model/register', registerData)
         )
     }
 }

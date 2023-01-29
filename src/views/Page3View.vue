@@ -30,7 +30,7 @@
           img: file
         }
         const headers = { 'Content-Type': 'multipart/form-data' }
-        axios.post('http://autotag.nsdai.org/tag', data, {headers})
+        axios.post('/tag', data, {headers})
              .then(response => (this.tags = response.data.tags))
       }
     }

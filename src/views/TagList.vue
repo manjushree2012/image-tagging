@@ -13,7 +13,7 @@
       
     },
     created() {
-      axios.get(`http://autotag.nsdai.org/status`)
+      axios.get(`/status`)
         .then(response => (
           this.keys = response.data[ Object.keys(response.data)[0] ]
           ))
