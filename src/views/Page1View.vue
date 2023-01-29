@@ -79,7 +79,7 @@ export default {
             key: this.key
         }
        this.loading = true
-         axios.post('http://localhost/autotag/img/fetch', data)
+         axios.post('http://autotag.nsdai.org/autotag/img/fetch', data)
          .then(response => (
            this.loading = false
          ))

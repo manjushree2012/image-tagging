@@ -110,7 +110,7 @@ export default {
   methods: {
 	fetchFiles(pattern=null) {
 		pattern = pattern ?? '*'
-		axios.get(`http://localhost/fs/list`)
+		axios.get(`http://autotag.nsdai.org/fs/list`)
         .then(response => (this.files = response.data))
 	},
 	searchFiles(event) 
