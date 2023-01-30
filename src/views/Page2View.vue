@@ -93,11 +93,15 @@ export default {
 
         axios
         .post('/autotag/ml/train/binary', data)
-        .then(
-            axios.post('/autotag/model/register', registerData).then(response => (
-                this.loading = false
-         ))
-        )
+        .then(response => {
+            if(response.data) {
+                axios.post('/autotag/model/register', registerData).then(response => {
+                    this.loading = false
+                })
+
+            }
+        })
+        // )
     }
 }
 }
