@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-        <Loader v-if="loading" />
+        <Loader msg="Training model" v-if="loading" />
 
         <form v-else method="POST" @submit="checkForm">
             <div class="form">
@@ -45,15 +45,16 @@
 <script>
 import "@/assets/css/forms.css";
 import axios from 'axios';
+import Loader from '@/components/Loader.vue'
 
 export default {
   name: 'Page2View',
   components: {
-    
+    Loader    
   },
   data() {
     return {
-        loading: '',
+        loading: false,
         form: {
             tag: '',
             group: ''

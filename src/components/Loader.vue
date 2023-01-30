@@ -1,6 +1,6 @@
 <template>
    <div class="ring">
-        Generating model
+        {{ msg ? msg : 'Generating model' }}
         <span></span>
     </div>
   </template>
