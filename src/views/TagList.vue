@@ -15,32 +15,41 @@
     created() {
       axios.get(`/status`)
         .then(response => (
-          this.keys = response.data[ Object.keys(response.data)[0] ]
+          this.keys = response.data //[ Object.keys(response.data)[0] ]
           ))
 
     },
     data() {
       return {
         keys: null,
-        tags: []
+        // tags: []
       }
     },
     computed: {
       tags() {
-        let temp =  this.keys.split("tags")[1]
+        let items = [];
+
+        if(this.keys) {
+            var keys = Object.keys(this.keys)
+            for(var i= 0; i < keys.length;i++){
+              items.push(this.getTags(this.keys[keys[i]]))
+            }
+        }
+        return items
+      }
+    },
+    methods: {
+      getTags(value)
+      {
+        let temp = value.split("tags")[1]
         temp = temp.replace(':', '')
         temp = temp.replace('}', '')
         temp = temp.replace('[', '')
         temp = temp.replace(']', '')
         temp = temp.slice(1)
-        // return temp
         temp = temp.split(",")
-        console.log(temp)
         return temp
       }
-
-    },
-    methods: {
     
     }
   }
