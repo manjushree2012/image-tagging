@@ -1,6 +1,8 @@
 <template>
     <div class="body">
-        <form method="POST" @submit="checkForm">
+        <Loader v-if="loading" />
+
+        <form v-else method="POST" @submit="checkForm">
             <div class="form">
 
                 <div class="title">KU Image Tagging Project</div>
@@ -51,6 +53,7 @@ export default {
   },
   data() {
     return {
+        loading: '',
         form: {
             tag: '',
             group: ''
@@ -73,6 +76,8 @@ export default {
     checkForm: function(e) {
         e.preventDefault()
 
+        this.loading = true
+
         const data = {
             tag : this.form.tag,
             dataset_key : this.dataset_key,
@@ -88,7 +93,9 @@ export default {
         axios
         .post('/autotag/ml/train/binary', data)
         .then(
-            axios.post('/autotag/model/register', registerData)
+            axios.post('/autotag/model/register', registerData).then(response => (
+                this.loading = false
+         ))
         )
     }
 }
