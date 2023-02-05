@@ -1,4 +1,4 @@
-import { createRouter, createMemoryHistory  } from 'vue-router'
+import { createRouter, createWebHistory  } from 'vue-router'
 import Page1View from '../views/Page1View.vue'
 import Page2View from '../views/Page2View.vue'
 import Page3View from '../views/Page3View.vue'
@@ -40,7 +40,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes
 })
 
