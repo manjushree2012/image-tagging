@@ -5,10 +5,9 @@ import store from './store'
 import axios from 'axios'
 
 axios.interceptors.request.use((config) => {
-    config.baseURL = 'http://autotag.nsdai.org'
-    config.headers['leel'] = 'ram'
+    config.baseURL = 'http://localhost'
+    // config.headers['leel'] = 'ram'
     config.url = config.url.replace('https://', 'http://')
-
     return config
 })
 
