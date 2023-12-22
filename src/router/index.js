@@ -4,6 +4,7 @@ import Page2View from '../views/Page2View.vue'
 import Page3View from '../views/Page3View.vue'
 import FileManagerView from '../views/FileManager.vue'
 import TagsList from '../views/TagList.vue'
+import TagIntActDisplay from '../views/TagIntActDisplay.vue'
 
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
     path: '/tags',
     name: 'tags',
     component: TagsList
+  },
+  {
+    path: '/viewTags',
+    name: 'displayTags',
+    component: TagIntActDisplay
   }
 ]
 
